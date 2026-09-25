@@ -1,5 +1,6 @@
 const add= document.getElementById("count-add")
 const wel= document.getElementById("we-l")
+const sav = document.getElementById("pr-e")
 let coin=0
 const a="Welcome to count number web "
 const name="arjun"
@@ -10,10 +11,12 @@ function addcoin(){
 }
 function save(){
     let pre = coin + "-"
-    const sav = document.getElementById("pr-e")
     sav.innerText += pre
 }
 function re(){
-    coin=0
+    coin=0 
     add.innerText=coin
+}
+function del(){
+    sav.innerText="previous score:"
 }
