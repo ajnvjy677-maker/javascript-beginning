@@ -1,7 +1,7 @@
-function green(name){
-    console.log("hello" +" "+ name)
-}
-function username(callback){
-    callback("arun")
-}
-username(green)
+const btn = document.getElementById('b-tn')
+
+
+btn.addEventListener('click', () => {
+    console.log("hello")
+})
+
