@@ -5,28 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./jv.css">
 </head>
 
 <body>
-    <h2>input something</h2>
-    <input type="text" placeholder="enter something" id="in">
-    <button id="b-tn">press</button>
+    <div class="cen">
+        <h2>Fill the Form</h2>
+        <form id="for">
+            <label for="fn">Enter your first name</label>
+            <input type="text" id="fn">
+            <label for="ln">Enter your last name</label>
+            <input type="text" id="ln">
+            <label for="em">Enter your Email</label>
+            <input type="text" id="em">
+            <label for="pw">Enter your password</label>
+            <input type="text" id="pw">
 
-    <br>
-    <br>
-    <form id="for">
-        <label for="fn">Enter your first name</label>
-        <input type="text" id="fn">
-        <label for="ln">Enter your last name</label>
-        <input type="text" id="ln">
-        <label for="em"></label>
-        <input type="text" id="em">
-        <label for="pw"></label>
-        <input type="text" id="pw">
-        
-        <button id="sub">subit</button>
-    </form>
-    <h3 id="out"></h3>
+            <button id="sub">submit</button>
+        </form>
+    </div>
     <script src="./jv.js"></script>
 </body>
 

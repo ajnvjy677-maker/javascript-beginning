@@ -1,0 +1,29 @@
+body{
+    background-color: blueviolet;
+}
+
+#for{
+    justify-self: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+#for input{
+    margin-bottom: 30px;
+}
+h2{
+    justify-self: center;
+}
+.cen{
+    justify-self: center;
+    width: 400px;
+    background-color: blue;
+    border-radius: 30px;
+    height: 400px;
+}
+button{
+    background-color: aqua;
+    font-size: large;
+    border-radius: 20px;
+    border: 0;
+}
