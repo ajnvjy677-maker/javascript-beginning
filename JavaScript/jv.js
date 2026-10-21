@@ -1,32 +1,61 @@
-// const n = 50
-// for(let i= 1; i<=n; i++){
-//     if(i%3 === 0 && i%5 === 0){
-//         console.log("FizzBuzz")
-//     }else if(i%3 === 0){
-//         console.log("Fizz")
-//     }else if(i%5 === 0){
-//         console.log("Buzz")
-//     }else{
-//         console.log(i)
-//     }
+
+// const newmark = document.getElementById("marks");
+// const id = document.getElementById("id");
+// const button = document.getElementById("btn");
+// const h = document.querySelector("h3");
+
+// const students = [
+//   { id: 1, name: "Asha", marks: 72 },
+//   { id: 2, name: "Ravi", marks: 48 },
+//   { id: 3, name: "Meera", marks: 90 },
+// ];
+
+// function addStudents(student) {
+//   const addstudent = [...students, ...student]
+//   return addstudent;
 // }
-const cart = [
-  { id: 1, name: "Keyboard", price: 1500, qty: 1, inStock: true },
-  { id: 2, name: "Mouse", price: 600, qty: 2, inStock: true },
-  { id: 3, name: "Monitor", price: 9000, qty: 1, inStock: false },
-  { id: 4, name: "USB Cable", price: 200, qty: 3, inStock: true },
-];
+// const addstudent = addStudents([{ id: 4, name: "ardra", marks: 80 }]);
 
-const h = cart.filter(c => c.inStock === true)
-console.log(h)
+// function updateMarks(student, newMarks, id) {
 
-h.forEach(a =>(
-    console.log(a.name+" "+"x"+a.qty+" = "+a.price*a.qty)
+//   return student.map(student =>
+//     student.id === id ? { ...student, marks: newMarks } : student
+//   );
 
-))
+// }
 
-const m = h.reduce((n,a)=>(
-    n = n + a.price*a.qty
 
-),0)
-console.log(m)
+// button.addEventListener("click", () => {
+//   let updatedStudent = updateMarks(addstudent, Number(newmark.value), Number(id.value));
+//   for (let i = 0; i < updatedStudent.length; i++) {
+//     console.log(updatedStudent[i]);
+//   }
+// });
+
+
+// h.addEventListener("click", () => {
+//   h.classList.toggle("done");
+//   console.log(h.target)
+// })
+let p = document.getElementById('btn2');
+const items = document.querySelector('#btn');
+
+
+
+items.addEventListener('click', function handle() {
+  for (let i = 0; i < 10000; i++) {
+  console.log(i);
+  }
+});
+document.removeEventListener('click', function handle() {
+  for (let i = 0; i < 10000; i++) {
+  console.log('clicked<br>');
+  }
+});
+
+
+// let hai = Array.from(p);
+// hai.push(items)
+// console.log(hai);
+// console.log(typeof items);
+//   items.innerText = 'your paragraph is rewritten '+p.innerText;
