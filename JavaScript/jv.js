@@ -1,82 +1,74 @@
-
-// const newmark = document.getElementById("marks");
-// const id = document.getElementById("id");
-// const button = document.getElementById("btn");
-// const h = document.querySelector("h3");
-
-// const students = [
-//   { id: 1, name: "Asha", marks: 72 },
-//   { id: 2, name: "Ravi", marks: 48 },
-//   { id: 3, name: "Meera", marks: 90 },
-// ];
-
-// function addStudents(student) {
-//   const addstudent = [...students, ...student]
-//   return addstudent;
-// }
-// const addstudent = addStudents([{ id: 4, name: "ardra", marks: 80 }]);
-
-// function updateMarks(student, newMarks, id) {
-
-//   return student.map(student =>
-//     student.id === id ? { ...student, marks: newMarks } : student
-//   );
-
-// }
+const form = document.getElementById("myForm");
+const name = document.getElementById("username");
+const nameError = document.getElementById("name-error");
+const email = document.getElementById("email");
+const emailError = document.getElementById("email-error");
+const password = document.getElementById("password")
+const passwordError = document.getElementById("password-error")
+const confirmPassword = document.getElementById("confirm-password")
+const confirmPasswordError = document.getElementById("confirm-password-error")
+const phone = document.getElementById("phone")
+const phoneError = document.getElementById("phone-error")
+const sub = document.getElementById("subject")
+const subError = document.getElementById("subject-error")
+const college = document.getElementById("comment")
+const check = document.getElementById("agree")
+const checkError = document.getElementById("agree-error")
 
 
-// button.addEventListener("click", () => {
-//   let updatedStudent = updateMarks(addstudent, Number(newmark.value), Number(id.value));
-//   for (let i = 0; i < updatedStudent.length; i++) {
-//     console.log(updatedStudent[i]);
-//   }
-// });
 
+function formValidation(){
+  let valid = true;
 
-// h.addEventListener("click", () => {
-//   h.classList.toggle("done");
-//   console.log(h.target)
-// })
+  if(name.value.trim() === ""|| name.value.length > 20){
+    nameError.textContent = "Please enter a valid name (max 20 characters).";
+    valid = false;
+  }else{
+    nameError.textContent = "";
+  }
+   let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if(email.value.trim() === ""|| emailPattern.test(email)){
+    emailError.textContent = "Please enter a valid email address.";
+    valid = false;
+  }else{
+    nameError.textContent = "";
+  }
 
-const myForm = document.getElementById("myForm");
-myForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  console.log("Form submitted");
-  
-  const fName = myForm["fName"].value;
-  const lName = myForm["lName"].value;
-  const email = myForm["email"].value;
-  const password = myForm["password"].value;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  if(password.value.trim() === ""|| !passwordRegex.test(password.value)){
+    passwordError.textContent = "Please enter a valid password (8-20 characters, including uppercase, lowercase, number, and special character).";
+    valid = false;
+  }else{
+    passwordError.textContent = "";
+  }
 
-  if (fName.trim() === ""){
-    console.log("First name is required");
+  if(confirmPassword.value.trim() === ""|| confirmPassword.value !== password.value){
+    confirmPasswordError.textContent = "Passwords do not match.";
+    valid = false;
+  }else{
+    confirmPasswordError.textContent = "";
+  }
+  const phoneRegex = /^[6-9]\d{9}$/;
+  if(phone.value.trim() === ""|| !phoneRegex.test(phone.value)){
+    phoneError.textContent = "Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9.";
+    valid = false;
+  }else{
+    phoneError.textContent = "";
   }
   
-  if (fName.trim().length > 20){
-    console.log("First name should be less than 20 characters");
+  if(sub.value.trim() === ""){
+    subError.textContent = "Please enter a subject.";
+    valid = false;
+  }else{
+    subError.textContent = "";
   }
 
-  if (lName.trim() === ""){
-    console.log("Last name is required");
+  if(!check.checked){
+    checkError.textContent = "Please fill it"
+    valid = false
+  }else{
+    checkError.textContent = ""
   }
 
-  if (lName.trim().length > 20){
-    console.log("Last name should be less than 20 characters");
-  }
-  
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email.match(emailRegex)) {
-    console.log("Invalid email address");
-  }
 
-  var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  if (!password.match(passwordRegex)) {
-    console.log("Invalid password");
-  }
-});
-
-// let hai = Array.from(p);
-// hai.push(items)
-// console.log(hai);
-// console.log(typeof items);
-//   items.innerText = 'your paragraph is rewritten '+p.innerText;
+}
