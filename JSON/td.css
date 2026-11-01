@@ -1,0 +1,83 @@
+.box{
+    justify-self: center;
+    justify-items: center;
+    width: 450px;
+    background-color: aqua;
+    height: 500px;
+    border-radius: 30px;
+}
+.hed{
+    justify-self: center;
+    height: 40px;
+    margin-bottom: 40px;
+}
+.hed button{
+    position: relative;
+    right: 15px;
+    height: 40px;
+
+}
+h3{
+    color: red;
+}
+
+input{
+    height: 40px;
+    font-size: medium;
+    width: 380px;
+    position: relative;
+    left: 30px;
+    
+}
+#list{
+    align-items: center;
+    border-radius: 20px;
+    width: 380px;
+    height: 40px;
+    background-color: rgb(240, 139, 6);
+    display: flex;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+#list button{
+height: 40px;
+    border-radius: 30px;
+    border: 0;
+    background-color: greenyellow;
+    justify-self: end;
+    position: relative;
+    left: 2px;
+    
+}
+#list h2{
+    margin: 0;
+    position: relative;
+    left: 30px;
+}
+
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #28d328;
+    border-radius: 5px;
+}
+
+.task h3 {
+    color: black;
+    margin: 0;
+}
+
+.delete {
+    background-color: rgb(0, 136, 255);
+    color: rgb(236, 6, 6);
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
